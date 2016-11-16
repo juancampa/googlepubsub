@@ -1,0 +1,18 @@
+{
+  "programId": "4ad089d9-b96d-4fff-829a-cfee63a8b0a4",
+
+  "schema": {
+    "types": [
+      {
+        "name": "Root"
+      }
+    ]
+  },
+
+  "events": [
+  ],
+
+  "queries": [
+  ]
+
+}
