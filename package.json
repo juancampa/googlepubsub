@@ -6,6 +6,6 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@google-cloud/pubsub": "^0.16.1"
+    "@google-cloud/pubsub": "^0.16.5"
   }
 }
