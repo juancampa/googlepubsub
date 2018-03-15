@@ -1,0 +1,139 @@
+{
+ "imports": [],
+ "dependencies": [],
+ "environment": [
+  {
+   "name": "projectId",
+   "description": "The Project ID"
+  },
+  {
+   "name": "clientEmail",
+   "description": "The email address as provided by Google Cloud Console"
+  },
+  {
+   "name": "privateKey",
+   "description": "The private key"
+  }
+ ],
+ "endpoints": [
+  {
+   "name": "webhooks",
+   "type": "https",
+   "description": "Push notifications",
+   "options": {}
+  }
+ ],
+ "schema": {
+  "types": [
+   {
+    "name": "Root",
+    "fields": [],
+    "computedFields": [
+     {
+      "name": "subscription",
+      "type": "Subscription",
+      "params": [
+       {
+        "name": "name",
+        "type": "String"
+       }
+      ]
+     },
+     {
+      "name": "topic",
+      "type": "Topic",
+      "params": [
+       {
+        "name": "name",
+        "type": "String"
+       }
+      ]
+     }
+    ],
+    "actions": [
+     {
+      "name": "createTopic",
+      "type": "Int",
+      "params": [
+       {
+        "name": "name",
+        "type": "String"
+       }
+      ]
+     }
+    ],
+    "events": []
+   },
+   {
+    "name": "Subscription",
+    "fields": [
+     {
+      "name": "name",
+      "type": "String"
+     },
+     {
+      "name": "topic",
+      "type": "String"
+     },
+     {
+      "name": "ackDeadlineSeconds",
+      "type": "Float"
+     }
+    ],
+    "computedFields": [],
+    "actions": [],
+    "events": []
+   },
+   {
+    "name": "Topic",
+    "fields": [
+     {
+      "name": "name",
+      "type": "String",
+      "description": "Name of the topic"
+     }
+    ],
+    "computedFields": [],
+    "actions": [
+     {
+      "name": "createSubscription",
+      "type": "Int",
+      "params": [
+       {
+        "name": "name",
+        "type": "String"
+       },
+       {
+        "name": "pushEndpoint",
+        "type": "String"
+       }
+      ]
+     }
+    ],
+    "events": [
+     {
+      "name": "messageReceived",
+      "type": "Void",
+      "params": [
+       {
+        "name": "id",
+        "type": "String"
+       },
+       {
+        "name": "data",
+        "type": "String"
+       },
+       {
+        "name": "publishTime",
+        "type": "String"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "expressions": [],
+ "database": [],
+ "isDriver": false
+}
